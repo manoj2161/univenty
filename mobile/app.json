@@ -1,0 +1,21 @@
+{
+  "expo": {
+    "name": "UNIVENTY",
+    "slug": "univenty-mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "android": {
+      "package": "com.univenty.mobile"
+    },
+    "plugins": [
+      "expo-status-bar",
+      "expo-font"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "4c9c0370-2cdf-407c-b9f4-b9bb8facf309"
+      }
+    }
+  }
+}
