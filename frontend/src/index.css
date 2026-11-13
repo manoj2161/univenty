@@ -1,0 +1,237 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-canvas text-stone-900 font-sans antialiased min-h-screen selection:bg-olive-100 selection:text-olive-900;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display', Georgia, serif;
+    @apply text-stone-900 font-bold tracking-tight;
+  }
+}
+
+
+/* Responsive safeguards: preserve the existing visual system while preventing
+   fixed-width content from pushing the page beyond the viewport. */
+@layer base {
+  html {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body, #root {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  img, video, canvas, svg {
+    max-width: 100%;
+  }
+
+  input, select, textarea, button {
+    max-width: 100%;
+    font: inherit;
+  }
+
+  pre, code {
+    overflow-wrap: anywhere;
+  }
+}
+
+.univenty-mobile-toggle,
+.univenty-mobile-nav {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .univenty-header-inner {
+    height: 68px;
+  }
+
+  .univenty-desktop-nav {
+    display: none !important;
+  }
+
+  .univenty-mobile-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    flex: 0 0 42px;
+    border: 1px solid #CDDCF6;
+    border-radius: 999px;
+    color: #324825;
+    background: #F4F7F2;
+    cursor: pointer;
+  }
+
+  .univenty-mobile-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    max-height: min(75vh, 620px);
+    overflow-y: auto;
+    padding: 8px 20px 18px;
+    border-top: 1px solid #E6EEE2;
+    background: rgba(255,255,255,.98);
+    box-shadow: 0 12px 20px rgba(35,51,26,.08);
+  }
+
+  .univenty-mobile-nav > a {
+    display: flex;
+    align-items: center;
+    min-height: 46px;
+    padding: 10px 4px;
+    border-bottom: 1px solid #edf2eb;
+    font-size: 14px;
+  }
+
+  .univenty-mobile-account-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 0 4px;
+  }
+
+  .univenty-mobile-logout,
+  .univenty-mobile-register {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 40px;
+    padding: 9px 16px;
+    border-radius: 999px;
+    color: #fff;
+    background: #52753C;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .univenty-mobile-register {
+    align-self: flex-start;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 640px) {
+  .max-w-7xl {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  main, section {
+    min-width: 0;
+  }
+
+  .max-w-7xl.mx-auto,
+  .max-w-7xl {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* Hero: retain the same typography and image, but prevent decorative
+     floating elements and large columns from clipping on narrow screens. */
+  .univenty-header + main {}
+  h1 {
+    overflow-wrap: anywhere;
+  }
+
+  .grid {
+    min-width: 0;
+  }
+
+  .grid > * {
+    min-width: 0;
+  }
+
+  table {
+    min-width: 620px;
+  }
+
+  /* Existing table-based admin views remain readable and scroll inside
+     their content area instead of widening the entire page. */
+  .overflow-x-auto {
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  input, select, textarea {
+    width: 100%;
+    min-width: 0;
+  }
+
+  button, a {
+    overflow-wrap: anywhere;
+  }
+
+  .text-4xl {
+    font-size: clamp(1.9rem, 8vw, 2.25rem);
+  }
+
+  .text-5xl {
+    font-size: clamp(2.1rem, 9vw, 2.8rem);
+  }
+
+  .text-6xl {
+    font-size: clamp(2.3rem, 10vw, 3.1rem);
+  }
+
+  .px-6 {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .py-20 {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .gap-12 {
+    gap: 2rem;
+  }
+
+  .gap-8 {
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .univenty-header-inner {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .univenty-header-inner .font-heading {
+    font-size: 1.35rem;
+  }
+
+  .univenty-header-inner .w-10 {
+    width: 36px;
+    height: 36px;
+  }
+
+  .univenty-header-inner .w-6 {
+    width: 22px;
+    height: 22px;
+  }
+
+  .max-w-7xl.mx-auto,
+  .max-w-7xl {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+}
